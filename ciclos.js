@@ -1,3 +1,5 @@
+// @Frausto Zapata Miguel Sebastian
+const OWNER = "@Frausto Zapata Miguel Sebastian";
 class SerieS {
   constructor() {
     this.n = 3;
@@ -61,12 +63,15 @@ class SerieE {
 }
 
 let serieS = new SerieS();
-console.log("serie S");
+console.log(`serie S by ${OWNER}`);
 console.log(serieS.infiniteSerieS(100));
 
 let serieE = new SerieE();
-console.log("serie E");
+console.log(`serie E by ${OWNER} with limit 4`);
 console.log(serieE.infiniteSerieE(4));
-console.log(serieE.infiniteSerieE(5));
+console.log(`serie E by ${OWNER} with limit 6`);
 console.log(serieE.infiniteSerieE(6));
+console.log(`serie E by ${OWNER} with limit 8`);
+console.log(serieE.infiniteSerieE(8));
+console.log(`serie E by ${OWNER} with limit 20`);
 console.log(serieE.infiniteSerieE(20));
