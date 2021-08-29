@@ -3,12 +3,15 @@ class SerieS {
     this.n = 3;
     this.s = 4;
   }
+  // Restar numeros
   substract(a, b) {
     return a - b;
   }
+  // Sumar numeros
   add(a, b) {
     return a + b;
   }
+  // Funcion para calcular serie "S"
   infiniteSerieS(limit) {
     let s = 0;
     s += this.substract(this.s, this.s / this.n);
@@ -26,17 +29,22 @@ class SerieE {
     this._one = 1;
     this.factorial = 1;
   }
+  // Sumar
   add(a, b) {
     return a + b;
   }
+  // Dividir
   divide(b) {
     return this._one / b;
   }
+  //Serie e=euler
   infiniteSerieE(limit) {
-    // limit en este caso sera contado como el numero factorial final
+    // limit en este caso sera contado como el numero factorial final(n!)
     var e = this._one;
     while (this.factorial <= limit) {
+      // Elabora la formlua de e
       e = this.add(e, this.divide(this.getFactorial(this.factorial)));
+      // Incrementa por cada vuelta el factorial
       this.factorial++;
     }
     return e;
@@ -44,6 +52,7 @@ class SerieE {
   getFactorial(n) {
     let factorialMultiplier = this._one;
     for (let i = this._one; i <= n; i++) {
+      // obtiene el numero factorial multiplicado desde 1 hasta n
       factorialMultiplier *= i;
     }
     return factorialMultiplier;
