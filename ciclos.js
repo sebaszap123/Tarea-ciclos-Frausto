@@ -9,7 +9,7 @@ class SerieS {
   add(a, b) {
     return a + b;
   }
-  infiniteSerie(limit) {
+  infiniteSerieS(limit) {
     let s = 0;
     s += this.substract(this.s, this.s / this.n);
     console.log(s);
@@ -22,7 +22,22 @@ class SerieS {
     return s;
   }
 }
-class SerieE {}
+class SerieE {
+  constructor() {
+    this._one = 1;
+    this.factorial = 1;
+  }
+  add(a, b) {
+    return a + b;
+  }
+  divide(a, b) {
+    return a / b;
+  }
+  infiniteSerieE() {}
+}
 
 let serieS = new SerieS();
-console.log(serieS.infiniteSerie(100));
+console.log(serieS.infiniteSerieS(100));
+
+let serieE = new SerieE();
+serieE.hola();
