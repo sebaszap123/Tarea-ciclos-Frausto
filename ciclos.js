@@ -41,11 +41,12 @@ class SerieE {
   infiniteSerieE(limit) {
     // limit en este caso sera contado como el numero factorial final(n!)
     var e = this._one;
-    while (this.factorial <= limit) {
+    let factorial = this.factorial;
+    while (factorial <= limit) {
       // Elabora la formlua de e
-      e = this.add(e, this.divide(this.getFactorial(this.factorial)));
+      e = this.add(e, this.divide(this.getFactorial(factorial)));
       // Incrementa por cada vuelta el factorial
-      this.factorial++;
+      factorial++;
     }
     return e;
   }
@@ -65,4 +66,7 @@ console.log(serieS.infiniteSerieS(100));
 
 let serieE = new SerieE();
 console.log("serie E");
-console.log(serieE.infiniteSerieE(30));
+console.log(serieE.infiniteSerieE(4));
+console.log(serieE.infiniteSerieE(5));
+console.log(serieE.infiniteSerieE(6));
+console.log(serieE.infiniteSerieE(20));
