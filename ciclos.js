@@ -12,7 +12,6 @@ class SerieS {
   infiniteSerieS(limit) {
     let s = 0;
     s += this.substract(this.s, this.s / this.n);
-    console.log(s);
     while (this.n < limit) {
       this.n += 2;
       s = this.add(s, this.s / this.n);
@@ -30,14 +29,31 @@ class SerieE {
   add(a, b) {
     return a + b;
   }
-  divide(a, b) {
-    return a / b;
+  divide(b) {
+    return this._one / b;
   }
-  infiniteSerieE() {}
+  infiniteSerieE(limit) {
+    // limit en este caso sera contado como el numero factorial final
+    var e = this._one;
+    while (this.factorial <= limit) {
+      e = this.add(e, this.divide(this.getFactorial(this.factorial)));
+      this.factorial++;
+    }
+    return e;
+  }
+  getFactorial(n) {
+    let factorialMultiplier = this._one;
+    for (let i = this._one; i <= n; i++) {
+      factorialMultiplier *= i;
+    }
+    return factorialMultiplier;
+  }
 }
 
 let serieS = new SerieS();
+console.log("serie S");
 console.log(serieS.infiniteSerieS(100));
 
 let serieE = new SerieE();
-serieE.hola();
+console.log("serie E");
+console.log(serieE.infiniteSerieE(30));
